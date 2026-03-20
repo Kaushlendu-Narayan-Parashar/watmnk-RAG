@@ -252,6 +252,11 @@ MIT License - feel free to use this project!
 📧 parasarkaushlendu@gmail.com  
 🔗 GitHub: [@Kaushlendu-Narayan-Parashar](https://github.com/Kaushlendu-Narayan-Parashar)
 
+
+## 🎥 Project Demo
+
+[![Watch the video](https://img.youtube.com/vi/AheKKj4aUqU/0.jpg)](https://youtu.be/AheKKj4aUqU)
+
 ---
 
 **Happy chatting! 🚀**
