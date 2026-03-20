@@ -147,8 +147,35 @@ Wattmonk (solar installation service), or General Knowledge.
 
 Be concise and accurate."""
     
-    # Build prompt with context
-    full_prompt = f"""{system_prompt}
+    # Build conversation history section (last 5 exchanges for context)
+    conversation_history = ""
+    if chat_history:
+        # Get last 10 messages (5 user-assistant pairs) to maintain context window
+        recent_history = chat_history[-10:]
+        history_parts = []
+        for msg in recent_history:
+            role = msg.get("role", "").capitalize()
+            content = msg.get("content", "")
+            history_parts.append(f"{role}: {content}")
+        
+        if history_parts:
+            conversation_history = "\n".join(history_parts)
+    
+    # Build full prompt with conversation history
+    if conversation_history:
+        full_prompt = f"""{system_prompt}
+
+Previous Conversation:
+{conversation_history}
+
+Context Information:
+{context}
+
+Current Question: {query}
+
+Please answer the question based on the context provided, while maintaining consistency with the previous conversation."""
+    else:
+        full_prompt = f"""{system_prompt}
 
 Context Information:
 {context}
