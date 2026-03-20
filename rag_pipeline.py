@@ -162,8 +162,8 @@ Please answer the question based on the context provided above."""
     for attempt in range(1, max_retries + 1):
         try:
 
-            # Call Gemini API with gemini-2.0-flash
-            model = genai.GenerativeModel("gemini-2.0-flash")
+            # Call Gemini API with gemini-2.5-flash
+            model = genai.GenerativeModel("gemini-2.5-flash")
             response = model.generate_content(full_prompt)
             
             return response.text
